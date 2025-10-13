@@ -195,6 +195,8 @@
 			);
 			mainGroup = 5FDA0BA32E944593000DEE8F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5FDA0BAD2E944593000DEE8F /* Products */;
 			projectDirPath = "";
@@ -411,7 +413,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.louafi.weatherly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -439,7 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.louafi.weatherly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
