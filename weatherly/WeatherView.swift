@@ -12,24 +12,31 @@ struct WeatherView: View {
 
     @State var weather: Weather?
     @State var isLoading: Bool = false
+    @State var errorMessage: String = ""
     
     var body: some View {
-        ScrollView {
-            Spacer(minLength: 300)
+        ZStack {
             if isLoading {
                 ProgressView("Loading...")
+            } else if !errorMessage.isEmpty {
+                Text(errorMessage).font(.headline)
             } else {
-                Text(String(weather?.current.temperature_2m ?? 0)).font(.title)
+                Text(String(weather?.current.temperature_2m ?? 0))
+                    .font(.title)
             }
         }
         .task {
-            await getWeather()
+            await fetchWeather()
         }
     }
     
-    func getWeather() async {
+    func fetchWeather() async {
         isLoading = true
-        weather = await weatherService.getWeather()
+        do {
+            weather = try await weatherService.getWeather()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
         isLoading = false
     }
 }
